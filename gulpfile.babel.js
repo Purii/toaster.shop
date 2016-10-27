@@ -34,6 +34,7 @@ gulp.task('copy:misc', () =>
     // Exclude the following files
     // (other tasks will handle the copying of these files)
     `!${config.dirs.src}/css{,/**/*}`,
+    `!${config.dirs.src}/*.html`,
     
     ], {
     // Include hidden files by default
@@ -60,19 +61,36 @@ gulp.task('css', () =>
       require("postcss-cssnext")({
         browsers: ['last 2 version']
       }),
-      require('cssnano')({autoprefixer: false,}),
+      require('cssnano')({ autoprefixer: false }),
       // require("postcss-browser-reporter")(),
       require("postcss-reporter")(),
     ]))
 
-    // Write files
+    // Concat files
+    .pipe(plugins().concat('bundle.min.css'))
+
+    // Write file
     .pipe(gulp.dest(`${config.dirs.dist}/css`))
+);
+
+
+/**
+ * HTML tasks
+ */
+gulp.task('html', () =>
+  gulp.src(`${config.dirs.src}/*.html`)
+  
+  // Compress
+  .pipe(plugins().htmlmin({ collapseWhitespace: true }))
+
+  // Write files
+  .pipe(gulp.dest(`${config.dirs.dist}`))
 );
 
 
 /**
  * Define CLI tasks
  */
-gulp.task('build', ['copy', 'css'])
+gulp.task('build', ['copy', 'html', 'css']);
 gulp.task('default', ['build']);
 
