@@ -15,7 +15,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && gulp",
-    "lint": "eslint .",
+    "lint:eslint": "eslint .",
+    "lint:stylelint": "stylelint src/css/*.css",
+    "lint": "npm run lint:eslint && npm run lint:stylint",
     "start": "npm run build && gulp watch",
     "test": "npm run lint"
   },
@@ -50,7 +52,9 @@
     "postcss-import": "^8.1.2",
     "postcss-reporter": "^1.4.1",
     "postcss-url": "^5.1.2",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0"
   },
   "dependencies": {
     "apache-server-configs": "^2.14.0"
