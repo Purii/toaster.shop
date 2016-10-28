@@ -89,7 +89,7 @@ gulp.task('html:index', ['css'], () =>
     {
       ignorePath: config.dirs.dist,
       relative: false,
-      removeTags: true
+      removeTags: true,
     }))
   // Compress
   .pipe(plugins().htmlmin({ collapseWhitespace: true }))
