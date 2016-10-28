@@ -6,6 +6,8 @@ import gulp from 'gulp';
  */
 import plugins from 'gulp-load-plugins';
 
+import critical from 'critical';
+
 import pkg from './package.json';
 /**
  * Constants
@@ -101,11 +103,21 @@ gulp.task('html:index', ['css'], () =>
   .pipe(gulp.dest(config.dirs.dist))
 );
 
+// Generate & Inline Critical-path CSS
+gulp.task('critical', ['html'], () =>
+  gulp.src(`${config.dirs.dist}/*.html`)
+    .pipe(critical.stream({
+      base: config.dirs.dist,
+      inline: true,
+      minify: true,
+    }))
+    .pipe(gulp.dest('dist'))
+);
 
 /**
  * Define CLI tasks
  */
-gulp.task('build', ['copy', 'html', 'css']);
+gulp.task('build', ['copy', 'html', 'css', 'critical']);
 gulp.task('default', ['build']);
 
 
