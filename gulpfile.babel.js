@@ -69,8 +69,9 @@ gulp.task('css', () =>
     ]))
 
     // Concat files
-    .pipe(plugins().concat('bundle.min.css'))
+    .pipe(plugins().concat('bundle.css'))
 
+    .pipe(plugins().rev())
     // Write file
     .pipe(gulp.dest(`${config.dirs.dist}/css`))
 );
