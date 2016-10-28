@@ -17,7 +17,7 @@
     "build": "npm run clean && gulp",
     "lint:eslint": "eslint .",
     "lint:stylelint": "stylelint src/css/*.css",
-    "lint": "npm run lint:eslint && npm run lint:stylint",
+    "lint": "npm run lint:eslint && npm run lint:stylelint",
     "start": "npm run build && gulp watch",
     "test": "npm run lint"
   },
