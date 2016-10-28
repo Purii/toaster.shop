@@ -4,7 +4,7 @@
 
 **Requirements: `node.js`**
 
-1. Abhängigkeiten installieren: `npm i` oder `yarn install`
+1. Abhängigkeiten installieren: `npm i` oder `yarn`
 2. Entwicklungsserver starten: `npm run start`
 3. Browser öffnen: `localhost:8080`
-4. Deployment: Inhalte befinden sich im Ordner `/dist`. Existiert der Ordner nicht: 'npm run build'
+4. Deployment: Inhalte befinden sich im Ordner `/dist`. Existiert der Ordner nicht: npm run build`
