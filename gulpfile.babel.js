@@ -95,7 +95,7 @@ gulp.task('html:index', ['css'], () =>
   .pipe(plugins().htmlmin({ collapseWhitespace: true }))
 
   // Write files
-  .pipe(gulp.dest(`${config.dirs.dist}`))
+  .pipe(gulp.dest(config.dirs.dist))
 );
 
 
@@ -105,3 +105,24 @@ gulp.task('html:index', ['css'], () =>
 gulp.task('build', ['copy', 'html', 'css']);
 gulp.task('default', ['build']);
 
+
+/**
+ * Development Server
+ */
+gulp.task('watch', () => {
+  gulp.src(config.dirs.dist)
+    .pipe(require('gulp-server-livereload')({
+      livereload: {
+        enable: true,
+        port: config.devServer.port,
+      },
+      directoryListing: {
+        enable: true,
+        path: './dist',
+      }
+    }));
+
+  // Write files to dist to trigger gulp.watch
+  gulp.watch(`${config.dirs.src}/css/*.css`, ['css']);
+  gulp.watch(`${config.dirs.src}/**/*.html`, ['html']);
+});
