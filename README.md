@@ -1,5 +1,7 @@
 # toaster.shop
 
+[![Build Status](https://travis-ci.com/Purii/toaster.shop.svg?token=qdXLSA5Q7qrhqsnmh1sw&branch=master)](https://travis-ci.com/Purii/toaster.shop)
+
 ## Development
 
 **Requirements: `node.js`**
