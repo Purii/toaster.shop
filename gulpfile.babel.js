@@ -77,9 +77,20 @@ gulp.task('css', () =>
 /**
  * HTML tasks
  */
-gulp.task('html', () =>
-  gulp.src(`${config.dirs.src}/*.html`)
+gulp.task('html', [
+  'html:index',
+]);
+
+gulp.task('html:index', ['css'], () =>
+  gulp.src(`${config.dirs.src}/index.html`)
   
+  // Inject files
+  .pipe(plugins().inject(gulp.src(`${config.dirs.dist}/css/*.css`, {read: false}),
+    {
+      ignorePath: config.dirs.dist,
+      relative: false,
+      removeTags: true
+    }))
   // Compress
   .pipe(plugins().htmlmin({ collapseWhitespace: true }))
 
