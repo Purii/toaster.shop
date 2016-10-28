@@ -15,8 +15,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && gulp",
+    "lint": "eslint .",
     "start": "npm run build && gulp watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,9 @@
     "babel-preset-es2015": "^6.18.0",
     "critical": "^0.8.0",
     "cssnano": "^3.8.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb-base": "^9.0.0",
+    "eslint-plugin-import": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^3.0.0",

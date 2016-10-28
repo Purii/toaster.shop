@@ -1,4 +1,3 @@
-import pkg from './package.json';
 import gulp from 'gulp';
 
 /**
@@ -7,16 +6,17 @@ import gulp from 'gulp';
  */
 import plugins from 'gulp-load-plugins';
 
+import pkg from './package.json';
 /**
  * Constants
  */
-const config = pkg['config'];
+const config = pkg.config;
 
 /**
  * Copy tasks
  */
 gulp.task('copy', [
-	'copy:.htaccess',
+  'copy:.htaccess',
   'copy:misc',
 ]);
 
@@ -27,19 +27,21 @@ gulp.task('copy:.htaccess', () =>
 );
 
 gulp.task('copy:misc', () =>
-  gulp.src([
-    // Copy all files
-    `${config.dirs.src}/**/*`,
+  gulp.src(
+    [
+      // Copy all files
+      `${config.dirs.src}/**/*`,
 
-    // Exclude the following files
-    // (other tasks will handle the copying of these files)
-    `!${config.dirs.src}/css{,/**/*}`,
-    `!${config.dirs.src}/*.html`,
-    
-    ], {
-    // Include hidden files by default
-    dot: true
-  }).pipe(gulp.dest(config.dirs.dist))
+      // Exclude the following files
+      // (other tasks will handle the copying of these files)
+      `!${config.dirs.src}/css{,/**/*}`,
+      `!${config.dirs.src}/*.html`,
+    ],
+    {
+      // Include hidden files by default
+      dot: true,
+    }
+  ).pipe(gulp.dest(config.dirs.dist))
 );
 
 
@@ -56,14 +58,14 @@ gulp.task('css', () =>
 
     // Postcss
     .pipe(plugins().postcss([
-      require("postcss-import")(),
-      require("postcss-url")(),
-      require("postcss-cssnext")({
-        browsers: ['last 2 version']
+      require('postcss-import')(),
+      require('postcss-url')(),
+      require('postcss-cssnext')({
+        browsers: ['last 2 version'],
       }),
       require('cssnano')({ autoprefixer: false }),
       // require("postcss-browser-reporter")(),
-      require("postcss-reporter")(),
+      require('postcss-reporter')(),
     ]))
 
     // Concat files
@@ -83,9 +85,9 @@ gulp.task('html', [
 
 gulp.task('html:index', ['css'], () =>
   gulp.src(`${config.dirs.src}/index.html`)
-  
+
   // Inject files
-  .pipe(plugins().inject(gulp.src(`${config.dirs.dist}/css/*.css`, {read: false}),
+  .pipe(plugins().inject(gulp.src(`${config.dirs.dist}/css/*.css`, { read: false }),
     {
       ignorePath: config.dirs.dist,
       relative: false,
@@ -119,7 +121,7 @@ gulp.task('watch', () => {
       directoryListing: {
         enable: true,
         path: './dist',
-      }
+      },
     }));
 
   // Write files to dist to trigger gulp.watch
