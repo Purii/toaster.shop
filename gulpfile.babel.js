@@ -9,10 +9,12 @@ import plugins from 'gulp-load-plugins';
 import critical from 'critical';
 
 import pkg from './package.json';
+
 /**
  * Constants
  */
 const config = pkg.config;
+const env = process.env.NODE_ENV;
 
 /**
  * Copy tasks
@@ -49,11 +51,13 @@ gulp.task('copy:misc', () =>
 
 /**
  * CSS tasks
+ * Better separation!
  */
-gulp.task('css', () =>
+gulp.task('css:production', () =>
   gulp.src(`${config.dirs.src}/css/*.css`)
 
     // Cleanup
+    // Only index.html?
     .pipe(plugins().uncss({
       html: [`${config.dirs.src}/index.html`],
     }))
@@ -78,16 +82,20 @@ gulp.task('css', () =>
     .pipe(gulp.dest(`${config.dirs.dist}/css`))
 );
 
+gulp.task('css:dev', () =>
+  gulp.src(`${config.dirs.src}/css/*.css`)
+
+    .pipe(plugins().rev())
+    // Write file
+    .pipe(gulp.dest(`${config.dirs.build}/css`))
+);
+
 
 /**
  * HTML tasks
  */
-gulp.task('html', [
-  'html:index',
-]);
-
-gulp.task('html:index', ['css'], () =>
-  gulp.src(`${config.dirs.src}/index.html`)
+gulp.task('html:production', ['css:production'], () =>
+  gulp.src(`${config.dirs.src}/*.html`)
 
   // Inject files
   .pipe(plugins().inject(gulp.src(`${config.dirs.dist}/css/*.css`, { read: false }),
@@ -103,8 +111,26 @@ gulp.task('html:index', ['css'], () =>
   .pipe(gulp.dest(config.dirs.dist))
 );
 
+gulp.task('html:dev', ['css:dev'], () =>
+  gulp.src(`${config.dirs.src}/*.html`)
+
+  // Inject files
+  .pipe(plugins().inject(gulp.src(`${config.dirs.build}/css/*.css`, { read: false }),
+    {
+      ignorePath: config.dirs.build,
+      relative: false,
+      removeTags: true,
+    }))
+  // Compress
+  .pipe(plugins().htmlmin({ collapseWhitespace: true }))
+
+  // Write files
+  .pipe(gulp.dest(config.dirs.build))
+);
+
+
 // Generate & Inline Critical-path CSS
-gulp.task('critical', ['html'], () =>
+gulp.task('critical', ['html:production'], () =>
   gulp.src(`${config.dirs.dist}/*.html`)
     .pipe(critical.stream({
       base: config.dirs.dist,
@@ -117,15 +143,32 @@ gulp.task('critical', ['html'], () =>
 /**
  * Define CLI tasks
  */
-gulp.task('build', ['copy', 'html', 'css', 'critical']);
-gulp.task('default', ['build']);
+gulp.task('build:development',
+  [
+    'html:dev',
+    'css:dev',
+  ]
+);
+gulp.task('build:production',
+  [
+    'html:production',
+    'css:production',
+    'copy',
+    'critical',
+  ]
+);
 
+if (env === 'production') {
+  gulp.task('default', ['build:production']);
+} else {
+  gulp.task('default', ['build:development']);
+}
 
 /**
  * Development Server
  */
 gulp.task('watch', () => {
-  gulp.src(config.dirs.dist)
+  gulp.src(config.dirs.build)
     .pipe(require('gulp-server-livereload')({
       livereload: {
         enable: true,
@@ -133,11 +176,11 @@ gulp.task('watch', () => {
       },
       directoryListing: {
         enable: true,
-        path: './dist',
+        path: './build',
       },
     }));
 
   // Write files to dist to trigger gulp.watch
-  gulp.watch(`${config.dirs.src}/css/*.css`, ['css']);
-  gulp.watch(`${config.dirs.src}/**/*.html`, ['html']);
+  gulp.watch(`${config.dirs.src}/**/*.css`, ['css:dev']);
+  gulp.watch(`${config.dirs.src}/**/*.html`, ['html:dev']);
 });
