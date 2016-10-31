@@ -84,8 +84,6 @@ gulp.task('css:production', () =>
 
 gulp.task('css:dev', () =>
   gulp.src(`${config.dirs.src}/css/*.css`)
-
-    .pipe(plugins().rev())
     // Write file
     .pipe(gulp.dest(`${config.dirs.build}/css`))
 );
