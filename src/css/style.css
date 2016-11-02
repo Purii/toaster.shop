@@ -1,5 +1,5 @@
 html {
-  background-color: #41bffa;
+  background-color: #FFF;
 }
 
 html,
@@ -20,26 +20,93 @@ body {
 }
 
 .header {
-  background: #afe5ff;
+  background: #FFC107;
   display: flex;
   flex-wrap: wrap;
+  border-top: 1px #FFB300 solid;
+  border-bottom: 2px #FFB300 solid;
 }
 
 .header__title {
-  color: #fff;
   display: flex;
   margin: 0;
+  font-family: 'Shrikhand', cursive;
+  font-size: 2.5rem;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .header__navigation {
-  color: #fff;
+  color: #FFF;
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
 }
 
+.herocontainer {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+
+.herocontainer__background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+}
+
+.herocontainer__background_image {
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.75;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
 .hero {
-  height: 100vh;
+  text-align: center;
+}
+
+.hero_title {
+  font-family: 'Shrikhand', cursive;
+  font-size: 5rem;
+  color: #222;
+}
+
+/**
+ * NAVIGATION
+ */
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navigation__element {
+  flex: 0 0 auto;
+  min-width: 7rem;
+}
+
+.navigation__element:hover,
+.navigation__element:active {
+  background-color: #FFB300;
+}
+
+a.navigation__link {
+  display: block;
+  line-height: 2.9;
+  text-align: center;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.1rem;
+  z-index: 1;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  padding: 0 1.5rem;
 }
 
 /**
