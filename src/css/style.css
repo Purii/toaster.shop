@@ -20,19 +20,23 @@ body {
 }
 
 .header {
-  background: #FFC107;
+  background: #333;
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px #FFB300 solid;
-  border-bottom: 2px #FFB300 solid;
 }
 
 .header__title {
   display: flex;
   margin: 0;
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Lato', regular;
   font-size: 2.5rem;
-  color: rgba(0, 0, 0, 0.87);
+  color: #FFC107;
+}
+
+.header__title a {
+  text-decoration: none;
+  color:inherit;
+
 }
 
 .header__navigation {
@@ -71,7 +75,7 @@ body {
 }
 
 .hero_title {
-  font-family: 'Shrikhand', cursive;
+  font-family: 'Lato', regular;
   font-size: 5rem;
   color: #222;
 }
@@ -92,7 +96,8 @@ body {
 }
 
 .navigation__element:hover,
-.navigation__element:active {
+.navigation__element:active,
+.navigation__element.selected  {
   background-color: #FFB300;
 }
 
@@ -107,6 +112,7 @@ a.navigation__link {
   cursor: pointer;
   text-rendering: optimizeLegibility;
   padding: 0 1.5rem;
+    font-family: 'Lato', regular;
 }
 
 /**
@@ -123,6 +129,8 @@ a.navigation__link {
   max-width: 1140px;
   align-self: center;
 }
+
+
 
 .l__grid {
   display: flex;
