@@ -1,5 +1,5 @@
 html {
-  background-color: #FFF;
+  background-color: #F6F6F6;
 }
 
 html,
@@ -52,6 +52,14 @@ body {
   position: relative;
 }
 
+.categorycontainer {
+  height: 70vh;
+  width: 100%;
+  position: relative;
+
+
+}
+
 .herocontainer__background {
   height: 100%;
   width: 100%;
@@ -74,7 +82,7 @@ body {
   text-align: center;
 }
 
-.hero_title {
+.hero_title, .category__title {
   font-family: 'Lato', regular;
   font-size: 5rem;
   color: #222;
@@ -121,7 +129,7 @@ a.navigation__link {
 .l__section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+/*  justify-content: center;*/
 }
 
 .l__section_inner {
@@ -147,4 +155,43 @@ a.navigation__link {
 .l__grid_element--size-wide {
   min-width: 60%;
   flex: 1 3 60%;
+}
+
+.table-container {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.table {
+    font-size: 16px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.category__description {
+
+    font-size: 15px;
+    color: #b3b3b3;
+
+
+
+
+}
+
+.category__top, .category__table {
+  background-color:#FFF;
+  box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
+      padding: 25px 60px;
+        margin-top:50px;
 }
