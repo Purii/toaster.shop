@@ -39,6 +39,7 @@ gulp.task('copy:misc', () =>
       // Exclude the following files
       // (other tasks will handle the copying of these files)
       `!${config.dirs.src}/css{,/**/*}`,
+      `!${config.dirs.src}/js{,/**/*}`,
       `!${config.dirs.src}/*.html`,
     ],
     {
@@ -69,8 +70,8 @@ gulp.task('css:production', () =>
       require('postcss-cssnext')({
         browsers: ['last 2 version'],
       }),
+      require('postcss-custom-media')(),
       require('cssnano')({ autoprefixer: false }),
-      // require("postcss-browser-reporter")(),
       require('postcss-reporter')(),
     ]))
 
@@ -84,10 +85,35 @@ gulp.task('css:production', () =>
 
 gulp.task('css:dev', () =>
   gulp.src(`${config.dirs.src}/css/*.css`)
-    // Write file
+
+    // Postcss
+    .pipe(plugins().postcss([
+      require('postcss-import')(),
+      require('postcss-url')(),
+      require('postcss-custom-media')(),
+      require('postcss-browser-reporter')(),
+    ]))
+
+    // Write files
     .pipe(gulp.dest(`${config.dirs.build}/css`))
 );
 
+
+gulp.task('js:dev', () =>
+  gulp.src(`${config.dirs.src}/js/*.js`)
+    .pipe(plugins().babel())
+
+    // Write files
+    .pipe(gulp.dest(`${config.dirs.build}/js`))
+);
+
+gulp.task('js:production', () =>
+  gulp.src(`${config.dirs.src}/js/*.js`)
+    .pipe(plugins().babel())
+
+    // Write files
+    .pipe(gulp.dest(`${config.dirs.dist}/js`))
+);
 
 /**
  * HTML tasks
@@ -96,7 +122,7 @@ gulp.task('html:production', ['css:production'], () =>
   gulp.src(`${config.dirs.src}/*.html`)
 
   // Inject files
-  .pipe(plugins().inject(gulp.src(`${config.dirs.dist}/css/*.css`, { read: false }),
+  .pipe(plugins().inject(gulp.src([`${config.dirs.dist}/css/*.css`, `${config.dirs.dist}/js/*.js`], { read: false }),
     {
       ignorePath: config.dirs.dist,
       relative: false,
@@ -113,7 +139,7 @@ gulp.task('html:dev', ['css:dev'], () =>
   gulp.src(`${config.dirs.src}/*.html`)
 
   // Inject files
-  .pipe(plugins().inject(gulp.src(`${config.dirs.build}/css/*.css`, { read: false }),
+  .pipe(plugins().inject(gulp.src([`${config.dirs.build}/css/*.css`, `${config.dirs.build}/js/*.js`], { read: false }),
     {
       ignorePath: config.dirs.build,
       relative: false,
@@ -145,12 +171,14 @@ gulp.task('build:development',
   [
     'html:dev',
     'css:dev',
+    'js:dev',
   ]
 );
 gulp.task('build:production',
   [
     'html:production',
     'css:production',
+    'js:production',
     'copy',
     'critical',
   ]
@@ -181,4 +209,5 @@ gulp.task('watch', () => {
   // Write files to dist to trigger gulp.watch
   gulp.watch(`${config.dirs.src}/**/*.css`, ['css:dev']);
   gulp.watch(`${config.dirs.src}/**/*.html`, ['html:dev']);
+  gulp.watch(`${config.dirs.src}/**/*.js`, ['js:dev']);
 });

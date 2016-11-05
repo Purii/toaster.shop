@@ -1,0 +1,31 @@
+/**
+ * LAYOUT
+ */
+.l__section {
+  display: flex;
+  flex-direction: column;
+/*  justify-content: center;*/
+}
+
+.l__section_inner {
+  width: 100%;
+  max-width: 1140px;
+  align-self: center;
+}
+
+.l__grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.l__grid_element {
+  flex: 1 1 18rem;
+  min-width: 18rem;
+}
+
+.l__grid_element--size-wide {
+  min-width: 60%;
+  flex: 1 3 60%;
+}

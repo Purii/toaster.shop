@@ -1,0 +1,6 @@
+@custom-media --biggerThanMobile (min-width: 971px);
+
+:root {
+  --headerBackgroundColor: #333;
+  --mobileNavBackgroundColor: #000;
+}
