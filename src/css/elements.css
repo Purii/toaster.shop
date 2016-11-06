@@ -220,11 +220,11 @@
 }
 
 .table--style-bordered tr {
-  border: 1px solid #ddd;
+  border: 1px solid #DDD;
 }
 
 .table--style-bordered td {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #DDD;
 }
 
 @media screen and (max-width: 63rem) {

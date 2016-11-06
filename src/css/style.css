@@ -25,13 +25,10 @@ body {
 }
 
 .theatre__upperstage {
-  display: flex;
-  flex-direction: column;
   flex: 1 0 100vh;
 }
 
 .herocontainer {
-  height: 50vh;
   width: 100%;
   position: relative;
 }
