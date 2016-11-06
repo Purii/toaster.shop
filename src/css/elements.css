@@ -162,7 +162,7 @@
 
 .tablecontainer__info {
   color: #808080;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: right;
 }
 
@@ -176,22 +176,24 @@
 }
 
 .table__row {
-  border: 1px solid #ddd;
+  border: 1px solid #DDD;
   text-align: left;
 }
 
 .table--style-striped .table__row:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
 
 .table__column {
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  font-size: .9rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.9rem;
+
   /* otherwise IE would break within words */
   word-break: normal;
+
   /* Non standard for webkit */
   word-break: break-word;
   hyphens: auto;
@@ -244,11 +246,11 @@
 .table__column--type-header--sortby-asc::after {
   display: inline-block;
   content: "";
-  border-left: .35em solid transparent;
-  border-right: .35em solid transparent;
-  border-top: .45em solid #333;
-  margin-left: .3em;
-  margin-bottom: .09em;
+  border-left: 0.35em solid transparent;
+  border-right: 0.35em solid transparent;
+  border-top: 0.45em solid #333;
+  margin-left: 0.3em;
+  margin-bottom: 0.09em;
 }
 
 .table__column--type-header--sortby-desc::after {
