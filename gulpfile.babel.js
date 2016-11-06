@@ -40,6 +40,7 @@ gulp.task('copy:misc', () =>
       // (other tasks will handle the copying of these files)
       `!${config.dirs.src}/css{,/**/*}`,
       `!${config.dirs.src}/js{,/**/*}`,
+      `!${config.dirs.src}/partials{,/**/*}`,
       `!${config.dirs.src}/*.html`,
     ],
     {
@@ -72,7 +73,10 @@ gulp.task('css:production', () =>
         browsers: ['last 2 version'],
       }),
       require('postcss-custom-media')(),
-      require('cssnano')({ autoprefixer: false }),
+      require('postcss-discard-comments')(),
+      require('cssnano')({
+        autoprefixer: false,
+      }),
       require('postcss-reporter')(),
     ]))
 
@@ -110,7 +114,10 @@ gulp.task('js:dev', () =>
 
 gulp.task('js:production', () =>
   gulp.src(`${config.dirs.src}/js/*.js`)
-    .pipe(plugins().babel())
+    .pipe(plugins().babel({
+      minified: true,
+      comments: false,
+    }))
 
     // Write files
     .pipe(gulp.dest(`${config.dirs.dist}/js`))
@@ -127,7 +134,7 @@ gulp.task('html:production', ['css:production'], () =>
     prefix: '@@',
     basepath: '@file',
   }))
-  
+
   // Inject files
   .pipe(plugins().inject(gulp.src([`${config.dirs.dist}/css/*.css`, `${config.dirs.dist}/js/*.js`], { read: false }),
     {
