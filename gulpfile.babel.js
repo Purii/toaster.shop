@@ -60,6 +60,7 @@ gulp.task('css:production', () =>
     // Cleanup
     // Only index.html?
     .pipe(plugins().uncss({
+      ignore: [/^.show-nav/],
       html: [`${config.dirs.src}/index.html`],
     }))
 
