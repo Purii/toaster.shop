@@ -43,6 +43,8 @@ body {
   position: absolute;
   z-index: -1;
   text-align: center;
+  top: 0;
+  left: 0;
 }
 
 .herocontainer__background_image {
