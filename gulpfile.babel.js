@@ -122,6 +122,12 @@ gulp.task('js:production', () =>
 gulp.task('html:production', ['css:production'], () =>
   gulp.src(`${config.dirs.src}/*.html`)
 
+  // Inject partials
+  .pipe(plugins().fileInclude({
+    prefix: '@@',
+    basepath: '@file',
+  }))
+  
   // Inject files
   .pipe(plugins().inject(gulp.src([`${config.dirs.dist}/css/*.css`, `${config.dirs.dist}/js/*.js`], { read: false }),
     {
