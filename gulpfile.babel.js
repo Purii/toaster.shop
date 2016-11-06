@@ -59,10 +59,9 @@ gulp.task('css:production', () =>
   gulp.src(`${config.dirs.src}/css/*.css`)
 
     // Cleanup
-    // Only index.html?
     .pipe(plugins().uncss({
       ignore: [/^.show-nav/],
-      html: [`${config.dirs.src}/index.html`],
+      html: [`${config.dirs.src}/*.html`],
     }))
 
     // Postcss
