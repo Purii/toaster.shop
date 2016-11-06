@@ -4,7 +4,6 @@
 .l__section {
   display: flex;
   flex-direction: column;
-/*  justify-content: center;*/
 }
 
 .l__section_inner {
@@ -26,6 +25,6 @@
 }
 
 .l__grid_element--size-wide {
-  min-width: 60%;
   flex: 1 3 60%;
+  min-width: 60%;
 }

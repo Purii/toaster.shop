@@ -91,6 +91,7 @@ body.show-nav {
 
   .header__inner_right {
     height: auto;
+    padding: 0 1rem;
   }
 }
 

@@ -20,7 +20,6 @@
   border-radius: 4px;
   max-height: 100%;
   max-width: 100%;
-  cursor: pointer;
 }
 
 .btn:hover,
@@ -29,16 +28,75 @@
   outline: none;
 }
 
-.btn--tiny {
+.btn--size-tiny {
   padding: 3px 12px;
   font-size: 9pt;
 }
 
-.btn--primary {
+.btn--color-primary {
   background-color: #9EAEBA;
   border: 1px solid #808D96;
   color: #FFF;
 }
+
+.btn--color-primary:hover {
+  background-color: #677179;
+}
+
+/**
+ * SECTION
+ */
+
+.section {
+  font-family: 'Lato', regular;
+}
+
+.section--add-padding {
+  padding: 1.5rem;
+  margin: 1rem;
+}
+
+.section--add-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__text {
+  line-height: 1.6;
+}
+
+.section__box {
+  background-color: #FFF;
+  box-shadow: 0 4px 8px 1px #E6E6E6;
+  border-radius: 2px;
+  border: 1px solid #E6E6E6;
+  padding: 1.5rem;
+  max-height: 45vh;
+}
+
+.section__image {
+  max-width: 100%;
+}
+
+.section__links {
+  margin-top: 2rem;
+}
+
+/**
+ * SEPARATOR
+ */
+.separatorcontainer {
+  background-color: #484848;
+  color: #FFF;
+}
+
+.separator--add-padding {
+  padding: 0.4rem 2.5rem;
+}
+
+.separator__text {}
 
 /**
  * HAMBURGERICON

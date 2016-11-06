@@ -19,18 +19,22 @@ body {
 }
 
 .theatre {
-  display: flex;
-  flex-direction: column;
   height: 100%;
 }
 
-.theatre__upperstage {
-  flex: 1 0 100vh;
+.theatre__upperstage {}
+
+.footer {
+  background: var(--headerBackgroundColor);
+  color: #fff;
 }
 
 .herocontainer {
   width: 100%;
   position: relative;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
 }
 
 .herocontainer__background {
@@ -53,6 +57,7 @@ body {
 
 .hero {
   text-align: center;
+  padding: 0 2rem;
 }
 
 .hero_title,

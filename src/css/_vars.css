@@ -1,4 +1,4 @@
-@custom-media --biggerThanMobile (min-width: 971px);
+@custom-media --biggerThanMobile (min-width: 930px);
 
 :root {
   --headerBackgroundColor: #333;
