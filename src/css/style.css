@@ -24,9 +24,32 @@ body {
 
 .theatre__upperstage {}
 
-.footer {
+.footercontainer {
   background: var(--headerBackgroundColor);
-  color: #FFF;
+}
+
+.footer {
+  padding: 1rem 2.5rem;
+}
+
+.footer__link {
+  color: #F6F6F6;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.footer__link:hover,
+.footer__link:active {
+  text-decoration: underline;
+}
+
+.footer__space {}
+
+.footer__space--side-right {
+  text-align: right;
 }
 
 .herocontainer {
