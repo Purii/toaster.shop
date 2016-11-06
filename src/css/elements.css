@@ -1,0 +1,287 @@
+/**
+ * BUTTON
+ */
+
+.btn {
+  display: inline-block;
+  padding: 10px 9px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  max-height: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn--tiny {
+  padding: 3px 12px;
+  font-size: 9pt;
+}
+
+.btn--primary {
+  background-color: #9EAEBA;
+  border: 1px solid #808D96;
+  color: #FFF;
+}
+
+/**
+ * HAMBURGERICON
+ */
+
+.hamburgericon {
+  padding: 0.7rem 1rem 0.2rem;
+  text-align: center;
+}
+
+.hamburgericon__description {
+  color: #FFF;
+  font-size: 0.75rem;
+  font-family: 'Lato', regular;
+  font-weight: 300;
+}
+
+.show-nav .hamburgericon {
+  padding: 1rem;
+}
+
+.show-nav .hamburgericon__description {
+  display: none;
+}
+
+.hamburgericon__bar {
+  background-color: #5D5D5D;
+  background-color: #FFF;
+  display: block;
+  width: 1.95rem;
+  height: 3px;
+  height: 0.188rem;
+  border-radius: 1px;
+  transition: transform 0.4s ease-out;
+}
+
+.hamburgericon__bar:nth-child(3) {
+  transition: opacity 0.2s ease-out;
+}
+
+.hamburgericon__bar:nth-child(2) {
+  margin: 0.25rem 0;
+}
+
+.show-nav .hamburgericon__bar:nth-child(1) {
+  transform: rotate(135deg);
+}
+
+.show-nav .hamburgericon__bar:nth-child(2) {
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.show-nav .hamburgericon__bar:nth-child(3) {
+  opacity: 0;
+}
+
+/**
+ * TABLE
+ */
+
+.tablecontainer {}
+
+.tablecontainer__info {
+  color: #808080;
+  font-size: .9rem;
+  text-align: right;
+}
+
+.table--is-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.table__row {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table--style-striped .table__row:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.table__column {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: .9rem;
+  /* otherwise IE would break within words */
+  word-break: normal;
+  /* Non standard for webkit */
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@media print {
+  .table {
+    page-break-inside: avoid;
+  }
+
+  .table__row {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  .table > thead {
+    display: table-header-group;
+  }
+
+  .table > tfoot {
+    display: table-footer-group;
+  }
+}
+
+/* Do not break if table is responsive */
+.table--is-responsive .table .table__column {
+  word-break: normal;
+}
+
+.table__row--type-header {
+  border: 1px solid #DDD;
+  text-align: left;
+  background-color: #E6E6E6;
+}
+
+.table__column--type-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Sort arrows */
+.table__column--type-header--is-sortable {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.table__column--type-header--sortby-asc::after {
+  display: inline-block;
+  content: "";
+  border-left: .35em solid transparent;
+  border-right: .35em solid transparent;
+  border-top: .45em solid #333;
+  margin-left: .3em;
+  margin-bottom: .09em;
+}
+
+.table__column--type-header--sortby-desc::after {
+  display: inline-block;
+  content: "";
+  border-left: 0.35em solid transparent;
+  border-right: 0.35em solid transparent;
+  border-bottom: 0.45em solid #333;
+  margin-left: 0.3em;
+  margin-bottom: 0.09em;
+}
+
+.table__column--size-wide {
+  width: 20%;
+}
+
+.table__column--minwidth-medium {
+  min-width: 10rem;
+}
+
+.table__column--linebreak-disable {
+  white-space: nowrap;
+}
+
+.table__column--align-center {
+  text-align: center;
+}
+
+.table--style-bordered tr {
+  border: 1px solid #ddd;
+}
+
+.table--style-bordered td {
+  border-left: 1px solid #ddd;
+}
+
+@media screen and (max-width: 63rem) {
+  .table--is-breakable .table__row--type-header {
+    display: none;
+  }
+
+  /* Support width 100% on IE */
+  :not(.table--is-responsive) > .table--is-breakable,
+  :not(.table--is-responsive) > .table--is-breakable tbody {
+    display: block;
+  }
+
+  :not(.table--is-responsive) > .table--is-breakable .table__row {
+    display: block;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  :not(.table--is-responsive) > .table--is-breakable .table__column {
+    display: block;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+
+  :not(.table--is-responsive) > .table--is-breakable .table__column--break-align-center {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  :not(.table--is-responsive) > .table--is-breakable .table__column:not(:last-child) {
+    border-bottom: 1px dotted #CCC;
+  }
+
+  :not(.table--is-responsive) > .table--is-breakable .table__column::before {
+    display: block;
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  :not(.table--is-responsive) > .table--style-bordered.table--is-breakable td {
+    border-left: 0;
+  }
+
+  /**
+   * Write opposite, because Sass compiler of Liferay removes white space before first :not --> .theme_lbv:not...
+   */
+
+  .table--is-responsive > .table--is-breakable .table__row--type-header {
+    display: table-row;
+  }
+
+  .table--is-responsive {
+    width: 100%;
+    overflow-y: hidden;
+  }
+}
