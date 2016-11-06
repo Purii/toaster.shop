@@ -3,4 +3,5 @@
 :root {
   --headerBackgroundColor: #333;
   --mobileNavBackgroundColor: #000;
+  --heightHeader: 4.2rem;
 }

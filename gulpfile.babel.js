@@ -196,6 +196,7 @@ if (env === 'production') {
 gulp.task('watch', () => {
   gulp.src(config.dirs.build)
     .pipe(require('gulp-server-livereload')({
+      host: '0.0.0.0',
       livereload: {
         enable: true,
         port: config.devServer.port,

@@ -20,27 +20,46 @@ body.show-nav {
 }
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: 0;
+  width: 100%;
+  z-index: 999;
+  height: var(--heightHeader);
   background: var(--headerBackgroundColor);
-  display: flex;
-  flex-wrap: wrap;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  transition: background 0.35s linear, height 0.35s ease-in;
+  overflow: hidden;
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.headerplaceholder {
+  height: var(--heightHeader);
 }
 
 .show-nav .header {
+  height: 100%;
   background: var(--mobileNavBackgroundColor);
+  transition: background 0.35s linear, height 0.35s ease-in 200ms;
 }
 
 @media (--biggerThanMobile) {
   .show-nav .header {
+    height: var(--heightHeader);
     background: var(--headerBackgroundColor);
   }
 }
 
 .header__inner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 99;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 .header__inner_left {
@@ -49,11 +68,29 @@ body.show-nav {
   width: 100%;
   align-items: center;
   padding: 0.4rem 1rem;
+  flex: 1 0 auto;
+  height: var(--heightHeader);
+}
+
+.header__inner_right {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
 }
 
 @media (--biggerThanMobile) {
+  .header__inner {
+    position: relative;
+    flex-direction: row;
+  }
+
   .header__inner_left {
     width: auto;
+  }
+
+  .header__inner_right {
+    height: auto;
   }
 }
 
@@ -67,46 +104,18 @@ body.show-nav {
   }
 }
 
-.header__inner_right {
-  flex: 1 0 auto;
-  opacity: 0;
-  z-index: -1;
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.4s ease-out, opacity 0.35s ease-out;
-  position: absolute;
-  width: 100%;
-}
-
-@media (--biggerThanMobile) {
-  .show-nav .header__inner_right,
-  .header__inner_right {
-    width: auto;
-    position: static;
-    z-index: 1;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.show-nav .header__inner_right {
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.4s ease-out, opacity 0.35s ease-out;
-  opacity: 1;
-  top: 100%;
-}
-
 .header__title {
   display: block;
-  flex: 0 0 auto;
   margin: 0;
   font-family: 'Lato', regular;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #FFC107;
 }
 
-.header__title a {
-  text-decoration: none;
-  color: inherit;
+@media (--biggerThanMobile) {
+  .header__title {
+    font-size: 2.5rem;
+  }
 }
 
 /**
@@ -114,13 +123,15 @@ body.show-nav {
  */
 
 .headernavigation {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   background: var(--mobileNavBackgroundColor);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 @media (--biggerThanMobile) {
@@ -131,6 +142,7 @@ body.show-nav {
     height: auto;
     justify-content: flex-end;
     box-shadow: none;
+    overflow: auto;
   }
 }
 
@@ -138,10 +150,9 @@ body.show-nav {
   flex: 0 0 auto;
   min-width: 7rem;
   opacity: 0;
-  transition: none;
   transform: scale(1.1) translateY(-24px);
   border-bottom: 1px solid #333;
-  transition-delay: 600ms, 600ms;
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
 }
 
 @media (--biggerThanMobile) {
@@ -171,7 +182,6 @@ body.show-nav {
 .show-nav .headernavigation__element {
   opacity: 1;
   transform: none;
-  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 }
 
 .headernavigation__element:hover,
@@ -182,21 +192,20 @@ body.show-nav {
 
 a.navigation__link {
   display: block;
-  line-height: 3;
+  line-height: 3.5;
   text-decoration: none;
   color: #FFF;
   font-size: 1.1rem;
   z-index: 1;
   cursor: pointer;
   text-rendering: optimizeLegibility;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   font-family: 'Lato', regular;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 @media (--biggerThanMobile) {
   a.navigation__link {
-    line-height: 3.9;
-    font-weight: 300;
+    line-height: var(--heightHeader);
   }
 }
