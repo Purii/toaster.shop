@@ -139,6 +139,12 @@ gulp.task('html:production', ['css:production'], () =>
 gulp.task('html:dev', ['css:dev'], () =>
   gulp.src(`${config.dirs.src}/*.html`)
 
+  // Inject partials
+  .pipe(plugins().fileInclude({
+    prefix: '@@',
+    basepath: '@file',
+  }))
+
   // Inject files
   .pipe(plugins().inject(gulp.src([`${config.dirs.build}/css/*.css`, `${config.dirs.build}/js/*.js`], { read: false }),
     {
@@ -152,7 +158,6 @@ gulp.task('html:dev', ['css:dev'], () =>
   // Write files
   .pipe(gulp.dest(config.dirs.build))
 );
-
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', ['html:production'], () =>
@@ -196,7 +201,7 @@ if (env === 'production') {
  */
 gulp.task('watch', () => {
   gulp.src(config.dirs.build)
-    .pipe(require('gulp-server-livereload')({
+    .pipe(plugins().serverLivereload({
       host: '0.0.0.0',
       livereload: {
         enable: true,
