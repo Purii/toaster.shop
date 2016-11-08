@@ -10,3 +10,8 @@
 2. Entwicklungsserver starten: `npm run start`
 3. Browser öffnen: `localhost:8000`
 4. Deployment: `npm run build`. Inhalte befinden sich anschließend im Ordner `/dist`.
+
+### Elemente
+
+#### Tabellen
+`.table--is-breakable` benötigt `thead` und `data-label[s]`.
