@@ -6,6 +6,14 @@
   flex-direction: column;
 }
 
+.l__section.l__light {
+  background-color: rgb(255, 255, 255);
+}
+
+.l__section.l__dark {
+
+}
+
 .l__section_inner {
   width: 100%;
   max-width: 1140px;
