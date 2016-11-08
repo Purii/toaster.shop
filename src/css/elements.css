@@ -34,13 +34,13 @@
 }
 
 .btn--color-primary {
-  background-color: #9EAEBA;
-  border: 1px solid #808D96;
+  background-color: #FFB300;
+
   color: #FFF;
 }
 
 .btn--color-primary:hover {
-  background-color: #677179;
+  background-color: #FFB300;
 }
 
 /**

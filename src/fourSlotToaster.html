@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-      <!--  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">-->
-       <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat|Raleway" rel="stylesheet">
 
         <!-- inject:css -->
         <!-- endinject -->
@@ -19,23 +18,22 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="theatre">
-          <div class="theatre__upperstage">
-            <header class="l__section header">
-              <div class="l__section_inner l__grid">
-                <h1 class="header__title l__grid_element"><a href="/index.html">toaster.shop</a></h1>
-                 <nav class="header__navigation navigation l__grid_element--size-wide">
-                    <div class="navigation__element"><a class="navigation__link" href="/twoSlotToaster.html">2-Schlitz-Toaster</a></div>
-                    <div class="navigation__element selected"><a class="navigation__link" href="/fourSlotToaster.html">4-Schlitz-Toaster</a></div>
-                    <div class="navigation__element"><a class="navigation__link" href="/multiFunctionToaster.html" >Multifunktions-Toaster</a></div>
-                    <div class="navigation__element"><a class="navigation__link"  href="/flatToaster.html">Flach-Toaster</a></div>
-                </nav>
-              </div>
-            </header>
 
-           <div class="l__section categorycontainer">
-                
-              <section class="l__section_inner">
+
+
+        <div class="theatre">
+
+          <div class="theatre__upperstage">
+
+            <!-- HEADER -->
+            @@include('./partials/header.html')
+            <!-- /HEADER -->
+          </div>
+        
+
+        <!-- CONTENT -->
+        <section class="l__section">
+              <div class="l__section_inner l__grid">
                 <div class="category__top">
                     <h1>4-Schlitz-Toaster</h1>
                      <span class="category__description">
@@ -72,22 +70,20 @@
                         </table>
 
                  </div>
-              </section>
+              </div>
+          </section>
+        <!-- /CONTENT -->
 
 
-              
-            </div>
+         <!-- FOOTER -->
+          @@include('./partials/footer.html')
+          <!-- /FOOTER -->
+          
         </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        <!-- FOOTER -->
+        @@include('./partials/gaanalytics.html')
+        <!-- /FOOTER -->
 
         <!-- inject:js -->
         <!-- endinject -->

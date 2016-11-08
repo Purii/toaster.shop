@@ -191,6 +191,13 @@ body.show-nav {
   background-color: #FFB300;
 }
 
+
+.header__title__link {
+text-decoration:none;
+color:#FFB300;
+
+}
+
 a.navigation__link {
   display: block;
   line-height: 3.5;
