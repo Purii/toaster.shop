@@ -109,13 +109,13 @@ body.show-nav {
   display: block;
   margin: 0;
   font-family: 'Lato', regular;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #FFC107;
 }
 
 @media (--biggerThanMobile) {
   .header__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -191,11 +191,9 @@ body.show-nav {
   background-color: #FFB300;
 }
 
-
 .header__title__link {
-text-decoration:none;
-color:#FFB300;
-
+  text-decoration: none;
+  color: #FFB300;
 }
 
 a.navigation__link {
@@ -203,7 +201,7 @@ a.navigation__link {
   line-height: 3.5;
   text-decoration: none;
   color: #FFF;
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   z-index: 1;
   cursor: pointer;
   text-rendering: optimizeLegibility;
