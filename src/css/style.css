@@ -32,15 +32,19 @@ body {
 
 .footer {
   padding: 1rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.footer__link {
+.footer__text {
   color: #F6F6F6;
   text-decoration: none;
   font-weight: 300;
   font-size: 0.9rem;
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
 }
 
 .footer__link:hover,
@@ -48,11 +52,7 @@ body {
   text-decoration: underline;
 }
 
-.footer__space {}
-
-.footer__space--side-right {
-  text-align: right;
-}
+.footer__element {}
 
 .herocontainer {
   width: 100%;
