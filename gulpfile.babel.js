@@ -61,7 +61,7 @@ gulp.task('css:production', () =>
     // Cleanup
     .pipe(plugins().uncss({
       ignore: [/^.show-nav/],
-      html: [`${config.dirs.src}/*.html`,`${config.dirs.src}/partials/*.html`],
+      html: [`${config.dirs.src}/*.html`, `${config.dirs.src}/partials/*.html`],
     }))
 
     // Postcss
