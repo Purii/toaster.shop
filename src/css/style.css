@@ -89,10 +89,16 @@ body {
 
 .hero_title {
   font-family: 'Lato', regular;
-  font-size: 5rem;
+  font-size: 4.5rem;
   color: #222;
   margin: 2rem 0;
   display: block;
+}
+
+@media (--biggerThanMobile) {
+  .hero_title {
+    font-size: 5rem;
+  }
 }
 
 .categorycontainer {
