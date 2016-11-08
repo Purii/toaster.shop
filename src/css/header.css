@@ -180,6 +180,10 @@ body.show-nav {
   transition-delay: 500ms, 500ms;
 }
 
+.show-nav .headernavigation__element:nth-child(5) {
+  transition-delay: 550ms, 550ms;
+}
+
 .show-nav .headernavigation__element {
   opacity: 1;
   transform: none;
