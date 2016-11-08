@@ -130,8 +130,6 @@ body {
 
 .category__top,
 .category__table {
-  background-color: #FFF;
-  box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.15);
   padding: 25px 60px;
   margin-top: 50px;
 }
