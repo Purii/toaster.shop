@@ -95,7 +95,9 @@
   padding: 0.4rem 2.5rem;
 }
 
-.separator__text {}
+.separator__text {
+  text-align: center;
+}
 
 /**
  * HAMBURGERICON
