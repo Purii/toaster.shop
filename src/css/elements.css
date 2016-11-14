@@ -73,7 +73,7 @@
   border: 1px solid #E6E6E6;
   padding: 1.5rem;
   max-width: 100%;
-  flex: 0 1 auto;
+  flex: 1 0 10rem;
 }
 
 .section__image {
