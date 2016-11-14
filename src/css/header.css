@@ -5,8 +5,8 @@ html {
 }
 
 body.show-nav {
-  height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 100% !important;
 }
 
 @media (--biggerThanMobile) {
@@ -15,7 +15,7 @@ body.show-nav {
   }
 
   body.show-nav {
-    overflow: auto;
+    overflow: initial;
   }
 }
 
@@ -100,6 +100,10 @@ body.show-nav {
 }
 
 @media (--biggerThanMobile) {
+  .header__inner_left_titlecontainer {
+    flex: none;
+  }
+
   .header__inner_left_hamburgercontainer {
     display: none;
   }

@@ -60,7 +60,7 @@ gulp.task('css:production', () =>
 
     // Cleanup
     .pipe(plugins().uncss({
-      ignore: [/^.show-nav/],
+      ignore: [/^.show-nav/, 'body.show-nav'],
       html: [`${config.dirs.src}/*.html`, `${config.dirs.src}/partials/*.html`],
     }))
 
