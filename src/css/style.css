@@ -96,15 +96,23 @@ body {
 
 .hero_title {
   font-family: 'Lato', regular;
-  font-size: 4.5rem;
-  color: #222;
-  margin: 2rem 0;
-  display: block;
+    color: #222;
+    margin: 2rem 0;
+    display: block;
+    line-height: 0.8;
+    left: 20%;
+    position: relative;
+    font-size:3rem;
+    font-weight:700;
+}
+
+.hero_title.bold{
+font-size:7rem;
 }
 
 @media (--biggerThanMobile) {
   .hero_title {
-    font-size: 5rem;
+    /*font-size: 5rem;*/
   }
 }
 
