@@ -92,7 +92,7 @@ body {
 .hero {}
 
 .hero__title {
-  margin: 0 2rem;
+  margin: 4rem 2rem;
   text-align: center;
 }
 
@@ -101,13 +101,22 @@ body {
   margin: 2rem 0;
   display: block;
   line-height: 0.8;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 .hero__title_text--style-highlight {
-  font-size: 7em;
-  margin-left: 11em;
+  font-size: 6rem;
+  margin-left: 0;
+}
+
+@media (min-width: 24.5rem) {
+  
+}
+@media (min-width: 35rem) {
+  .hero__title_text--style-highlight {
+    margin-left: 6rem;
+  }
 }
 
 @media (--biggerThanMobile) {
