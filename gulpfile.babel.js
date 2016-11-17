@@ -40,6 +40,7 @@ gulp.task('copy:misc', () =>
       // (other tasks will handle the copying of these files)
       `!${config.dirs.src}/css{,/**/*}`,
       `!${config.dirs.src}/js{,/**/*}`,
+      `!${config.dirs.src}/img{,/**/*}`,
       `!${config.dirs.src}/partials{,/**/*}`,
       `!${config.dirs.src}/*.html`,
     ],
@@ -48,6 +49,17 @@ gulp.task('copy:misc', () =>
       dot: true,
     }
   ).pipe(gulp.dest(config.dirs.dist))
+);
+
+gulp.task('img:dev', () =>
+  gulp.src(`${config.dirs.src}/img/*`)
+  .pipe(gulp.dest(`${config.dirs.build}/img`))
+);
+
+gulp.task('img:production', () =>
+  gulp.src(`${config.dirs.src}/img/*`)
+  .pipe(plugins().imagemin())
+  .pipe(gulp.dest(`${config.dirs.build}/img`))
 );
 
 
@@ -187,6 +199,7 @@ gulp.task('critical', ['html:production'], () =>
  */
 gulp.task('build:development',
   [
+    'img:dev',
     'html:dev',
     'css:dev',
     'js:dev',
@@ -194,6 +207,7 @@ gulp.task('build:development',
 );
 gulp.task('build:production',
   [
+    'img:production',
     'html:production',
     'css:production',
     'js:production',

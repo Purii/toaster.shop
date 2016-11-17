@@ -3,6 +3,7 @@
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+  min-width: 320px;
 }
 
 *,
@@ -10,8 +11,6 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
-html {}
 
 html,
 body {
@@ -83,7 +82,7 @@ body {
   height: 100%;
   max-width: 100%;
   max-height: 100%;
-  opacity: 0.75;
+  opacity: 0.65;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 40%;
@@ -93,7 +92,7 @@ body {
 
 .hero__title {
   margin: 4rem 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .hero__title_text {
@@ -101,27 +100,23 @@ body {
   margin: 2rem 0;
   display: block;
   line-height: 0.8;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
 .hero__title_text--style-highlight {
-  font-size: 6rem;
+  font-size: 4rem;
   margin-left: 0;
 }
 
-@media (min-width: 24.5rem) {
-  
-}
 @media (min-width: 35rem) {
+  .hero__title_text {
+    font-size: 2.5rem;
+  }
+
   .hero__title_text--style-highlight {
     margin-left: 6rem;
-  }
-}
-
-@media (--biggerThanMobile) {
-  .hero_title {
-    /*font-size: 5rem;*/
+    font-size: 6rem;
   }
 }
 
