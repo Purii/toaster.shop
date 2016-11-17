@@ -246,6 +246,15 @@
   color: #333;
 }
 
+.table__column--type-header {
+  width: 15%;
+}
+
+.table__row--type-header th:nth-child(2),
+.table__column[data-label="Abbildung"] {
+  display: none;
+}
+
 /* Sort arrows */
 .table__column--type-header--is-sortable {
   white-space: nowrap;
