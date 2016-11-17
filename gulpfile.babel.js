@@ -38,6 +38,7 @@ gulp.task('copy:misc', () =>
 
       // Exclude the following files
       // (other tasks will handle the copying of these files)
+      `!${config.dirs.src}/assets(,/**/*}`,
       `!${config.dirs.src}/css{,/**/*}`,
       `!${config.dirs.src}/js{,/**/*}`,
       `!${config.dirs.src}/img{,/**/*}`,
@@ -61,7 +62,6 @@ gulp.task('img:production', () =>
   .pipe(plugins().imagemin())
   .pipe(gulp.dest(`${config.dirs.dist}/img`))
 );
-
 
 /**
  * CSS tasks
