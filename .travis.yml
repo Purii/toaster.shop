@@ -7,5 +7,4 @@ script:
  - npm run build
 
 after_success:
- - cd dist
- - find . -type f -exec curl -u $FTP_U:$FTP_P --ftp-create-dirs -T {} ftp://toaster-online.de/{} \;
+ - cd dist && find . -type f -exec curl -u $FTP_U:$FTP_P --ftp-create-dirs -T {} ftp://toaster-online.de/{} \;
