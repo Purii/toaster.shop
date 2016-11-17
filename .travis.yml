@@ -1,6 +1,10 @@
 language: node_js
 node_js:
  - "7"
+
 script:
  - npm test
  - npm run build
+
+after_success:
+"cd dist/ && find . -type f -exec curl -u $FTP_U:$FTP_P --ftp-create-dirs -T {} ftp://toaster-online.de/{} \;"
