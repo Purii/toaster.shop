@@ -21,6 +21,12 @@ body {
   font-family: 'Lato', regular;
 }
 
+.table__column--type-header {width:15%;}
+
+.table__row--type-header th:nth-child(2),
+.table__column[data-label="Abbildung"] {
+  display: none;
+}
 .theatre {
   height: 100%;
   display: flex;
