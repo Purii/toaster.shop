@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^zwei-schlitz-toaster/?$ twoSlotToaster.html [NC,L]
+  RewriteRule ^vier-schlitz-toaster/?$ fourSlotToaster.html [NC,L]
+  RewriteRule ^flachtoaster/?$ flatToaster.html [NC,L]
+  RewriteRule ^multifunktionstoaster/?$ multifunctionToaster.html [NC,L]
+  RewriteRule ^sandwichtoaster/?$ sandwichToaster.html [NC,L]
+
+  RewriteRule ^impressum/?$ impressum.html [NC,L]
+  RewriteRule ^datenschutz/?$ datenschutz.html [NC,L]
+</IfModule>

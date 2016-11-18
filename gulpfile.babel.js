@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import fs from 'fs';
 
 /**
  * Load all gulp plugins automatically
@@ -24,11 +25,13 @@ gulp.task('copy', [
   'copy:misc',
 ]);
 
-gulp.task('copy:.htaccess', () =>
-    gulp.src('node_modules/apache-server-configs/dist/.htaccess')
+gulp.task('copy:.htaccess', () => {
+  const htaccessContent = fs.readFileSync(`${config.dirs.src}/assets/extendHtaccess.txt`, 'utf8');
+  return gulp.src('node_modules/apache-server-configs/dist/.htaccess')
         .pipe(plugins().replace(/# ErrorDocument/g, 'ErrorDocument'))
-        .pipe(gulp.dest(config.dirs.dist))
-);
+        .pipe(plugins().insert.append(htaccessContent))
+        .pipe(gulp.dest(config.dirs.dist));
+});
 
 gulp.task('copy:misc', () =>
   gulp.src(
@@ -38,7 +41,7 @@ gulp.task('copy:misc', () =>
 
       // Exclude the following files
       // (other tasks will handle the copying of these files)
-      `!${config.dirs.src}/assets(,/**/*}`,
+      `!${config.dirs.src}/assets{,/**/*}`,
       `!${config.dirs.src}/css{,/**/*}`,
       `!${config.dirs.src}/js{,/**/*}`,
       `!${config.dirs.src}/img{,/**/*}`,

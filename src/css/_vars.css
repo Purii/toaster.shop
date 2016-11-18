@@ -1,5 +1,8 @@
 @custom-media --biggerThanMobile (min-width: 1040px);
 
+/** SingleColumn 18rem */
+@custom-media --biggerSingleColumn (min-width: 580px);
+
 :root {
   --headerBackgroundColor: #333;
   --mobileNavBackgroundColor: #000;
