@@ -76,6 +76,10 @@ body {
 
 .footer__element {}
 
+.hero__title .btn--color-primary {
+  margin-left: 12rem;
+}
+
 .herocontainer {
   width: 100%;
   position: relative;

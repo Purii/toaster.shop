@@ -40,6 +40,11 @@
   color: #FFF;
 }
 
+.btn--color-secondary {
+  background-color: #484848;
+  color: #FFF;
+}
+
 .btn--color-primary:hover {
   background-color: #FFB300;
 }
@@ -76,6 +81,56 @@
   padding: 1.5rem;
   max-width: 100%;
 }
+
+.section__box.category {
+  width: 15%;
+  display: inline-block;
+  margin: 2rem;
+  position:relative;
+}
+
+.section__box.category p {
+  visiblity: hidden;
+  display:none;
+}
+
+
+.section__box.category:hover p {
+  display: inline;
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  padding: 29% 30%;
+  font-size: 1.8rem;
+}
+
+.section__box.category:hover .overlay {
+  opacity:0.5;
+  visibility: visible;
+}
+
+
+
+.section__box.category .overlay {    
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: #333;
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
 
 .section__image {
   max-width: 100%;
