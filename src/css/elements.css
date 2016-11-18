@@ -86,18 +86,17 @@
   width: 15%;
   display: inline-block;
   margin: 2rem;
-  position:relative;
+  position: relative;
 }
 
 .section__box.category p {
-  visiblity: hidden;
-  display:none;
+  visibility: hidden;
+  display: none;
 }
-
 
 .section__box.category:hover p {
   display: inline;
-  color: #fff;
+  color: #FFF;
   vertical-align: middle;
   text-align: center;
   margin: 0 auto;
@@ -107,13 +106,11 @@
 }
 
 .section__box.category:hover .overlay {
-  opacity:0.5;
+  opacity: 0.5;
   visibility: visible;
 }
 
-
-
-.section__box.category .overlay {    
+.section__box.category .overlay {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -123,14 +120,6 @@
   background: #333;
   visibility: hidden;
 }
-
-
-
-
-
-
-
-
 
 .section__image {
   max-width: 100%;
