@@ -36,6 +36,22 @@ body {
   background: var(--headerBackgroundColor);
 }
 
+.prefooter {
+  margin-top: 5rem;
+  flex: 0 0 auto;
+  padding: 0.5rem 0;
+  background-color: #C36666;
+}
+
+.prefooter__inner {
+  padding: 0 1rem;
+}
+
+.prefooter__text {
+  color: #FFF;
+  font-size: 0.95rem;
+}
+
 .footer {
   padding: 1rem 2.5rem;
   display: flex;

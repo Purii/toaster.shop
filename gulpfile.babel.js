@@ -147,6 +147,9 @@ gulp.task('html:production', ['css:production'], () =>
   .pipe(plugins().fileInclude({
     prefix: '@@',
     basepath: '@file',
+    context: {
+      env: 'production',
+    },
   }))
 
   // Inject files
@@ -170,6 +173,9 @@ gulp.task('html:dev', ['css:dev'], () =>
   .pipe(plugins().fileInclude({
     prefix: '@@',
     basepath: '@file',
+    context: {
+      env: 'dev',
+    },
   }))
 
   // Inject files
