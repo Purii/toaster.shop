@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
   RewriteRule ^zwei-schlitz-toaster/?$ twoSlotToaster.html [NC,L]
   RewriteRule ^vier-schlitz-toaster/?$ fourSlotToaster.html [NC,L]
   RewriteRule ^flachtoaster/?$ flatToaster.html [NC,L]
@@ -8,4 +9,8 @@
 
   RewriteRule ^impressum/?$ impressum.html [NC,L]
   RewriteRule ^datenschutz/?$ datenschutz.html [NC,L]
+
+  # Add trailing slash
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
 </IfModule>
