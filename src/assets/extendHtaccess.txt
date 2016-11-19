@@ -3,7 +3,7 @@
 
     RewriteRule ^klassische-toaster/?$ classicToaster.html [NC,L]
   RewriteRule ^klassische-toaster/zwei-schlitz-toaster/?$ twoSlotToaster.html [NC,L]
-  RewriteRule ^klassische-toaster/vier-schlitz-toaster/?$ twoSlotToaster.html [NC,L]
+  RewriteRule ^klassische-toaster/vier-schlitz-toaster/?$ fourSlotToaster.html [NC,L]
 
   RewriteRule ^flachtoaster/?$ flatToaster.html [NC,L]
   RewriteRule ^multifunktionstoaster/?$ multifunctionToaster.html [NC,L]
