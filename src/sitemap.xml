@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://toaster-online.de/</loc>
+  <lastmod>2016-11-18T21:25:23+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/zwei-schlitz-toaster/</loc>
+  <lastmod>2016-11-18T21:25:27+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/vier-schlitz-toaster/</loc>
+  <lastmod>2016-11-18T21:25:18+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/flachtoaster/</loc>
+  <lastmod>2016-11-18T21:25:17+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/multifunktionstoaster/</loc>
+  <lastmod>2016-11-18T21:25:24+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/sandwichtoaster/</loc>
+  <lastmod>2016-11-18T21:25:25+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/datenschutz</loc>
+  <lastmod>2016-11-18T21:25:15+00:00</lastmod>
+</url>
+<url>
+  <loc>http://toaster-online.de/impressum</loc>
+  <lastmod>2016-11-18T21:25:21+00:00</lastmod>
+</url>
+</urlset>
