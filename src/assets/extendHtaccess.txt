@@ -7,6 +7,7 @@
 
   RewriteRule ^flachtoaster/?$ flatToaster.html [NC,L]
   RewriteRule ^multifunktionstoaster/?$ multifunctionToaster.html [NC,L]
+  RewriteRule ^retro-toaster/?$ retroToaster.html [NC,L]
   RewriteRule ^sandwichtoaster/?$ sandwichToaster.html [NC,L]
 
   RewriteRule ^impressum/?$ impressum.html [NC,L]
