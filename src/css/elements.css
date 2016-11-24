@@ -304,6 +304,20 @@
 
 .blogentry {}
 
+.blogentry__box {
+  max-width: 100%;
+}
+
+@media (--biggerSingleColumn) {
+  .blogentry__box {
+    background-color: #FFF;
+    box-shadow: 0 4px 8px 1px #E6E6E6;
+    border-radius: 2px;
+    border: 1px solid #E6E6E6;
+    padding: 1.5rem;
+  }
+}
+
 .blogentry__pretitle {
   color: #FFB300;
   font-size: 0.89rem;
