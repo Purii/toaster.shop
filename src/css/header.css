@@ -188,6 +188,10 @@ body.show-nav {
   transition-delay: 550ms, 550ms;
 }
 
+.show-nav .headernavigation__element:nth-child(6) {
+  transition-delay: 600ms, 600ms;
+}
+
 .show-nav .headernavigation__element {
   opacity: 1;
   transform: none;
