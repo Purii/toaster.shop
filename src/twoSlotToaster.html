@@ -260,7 +260,9 @@
         </div>
 
         <!-- FOOTER -->
-        @@include('./partials/gaanalytics.html')
+        @@if (env === 'production') {
+          @@include('./partials/gaanalytics.html')
+        }
         <!-- /FOOTER -->
 
         <!-- inject:js -->

@@ -299,202 +299,24 @@
 }
 
 /**
- * TABLE
- */
+  BLOGENTRY
+**/
 
-.tablecontainer {}
+.blogentry {}
 
-.tablecontainer__info {
-  color: #808080;
-  font-size: 0.9rem;
-  text-align: right;
+.blogentry__pretitle {
+  color: #FFB300;
+  font-size: 0.89rem;
+  display: block;
+  line-height: 1.2rem;
+  min-height: 1.2rem;
 }
 
-.table--is-responsive {
-  overflow-x: auto;
+.blogentry__title {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 1.5rem;
 }
 
-.table {
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.table__row {
-  border: 1px solid #DDD;
-  text-align: left;
-}
-
-.table--style-striped .table__row:nth-child(odd) {
-  background-color: #F2F2F2;
-}
-
-.table__column {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 0.9rem;
-
-  /* otherwise IE would break within words */
-  word-break: normal;
-
-  /* Non standard for webkit */
-  word-break: break-word;
-  hyphens: auto;
-}
-
-@media print {
-  .table {
-    page-break-inside: avoid;
-  }
-
-  .table__row {
-    page-break-inside: avoid;
-    page-break-after: auto;
-  }
-
-  .table > thead {
-    display: table-header-group;
-  }
-
-  .table > tfoot {
-    display: table-footer-group;
-  }
-}
-
-/* Do not break if table is responsive */
-.table--is-responsive .table .table__column {
-  word-break: normal;
-}
-
-.table__row--type-header {
-  border: 1px solid #DDD;
-  text-align: left;
-  background-color: #E6E6E6;
-}
-
-.table__column--type-header {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  color: #333;
-}
-
-.table__column--type-header {
-  width: 15%;
-}
-
-.table__row--type-header th:nth-child(2),
-.table__column[data-label="Abbildung"] {
-  display: none;
-}
-
-/* Sort arrows */
-.table__column--type-header--is-sortable {
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.table__column--type-header--sortby-asc::after {
-  display: inline-block;
-  content: "";
-  border-left: 0.35em solid transparent;
-  border-right: 0.35em solid transparent;
-  border-top: 0.45em solid #333;
-  margin-left: 0.3em;
-  margin-bottom: 0.09em;
-}
-
-.table__column--type-header--sortby-desc::after {
-  display: inline-block;
-  content: "";
-  border-left: 0.35em solid transparent;
-  border-right: 0.35em solid transparent;
-  border-bottom: 0.45em solid #333;
-  margin-left: 0.3em;
-  margin-bottom: 0.09em;
-}
-
-.table__column--size-wide {
-  width: 20%;
-}
-
-.table__column--minwidth-medium {
-  min-width: 10rem;
-}
-
-.table__column--linebreak-disable {
-  white-space: nowrap;
-}
-
-.table__column--align-center {
-  text-align: center;
-}
-
-.table--style-bordered tr {
-  border: 1px solid #DDD;
-}
-
-.table--style-bordered td {
-  border-left: 1px solid #DDD;
-}
-
-@media screen and (max-width: 63rem) {
-  .table--is-breakable .table__row--type-header {
-    display: none;
-  }
-
-  /* Support width 100% on IE */
-  :not(.table--is-responsive) > .table--is-breakable,
-  :not(.table--is-responsive) > .table--is-breakable tbody {
-    display: block;
-  }
-
-  :not(.table--is-responsive) > .table--is-breakable .table__row {
-    display: block;
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  :not(.table--is-responsive) > .table--is-breakable .table__column {
-    display: block;
-    padding-bottom: 1rem;
-    width: 100%;
-  }
-
-  :not(.table--is-responsive) > .table--is-breakable .table__column--break-align-center {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  :not(.table--is-responsive) > .table--is-breakable .table__column:not(:last-child) {
-    border-bottom: 1px dotted #CCC;
-  }
-
-  :not(.table--is-responsive) > .table--is-breakable .table__column::before {
-    display: block;
-    content: attr(data-label);
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  :not(.table--is-responsive) > .table--style-bordered.table--is-breakable td {
-    border-left: 0;
-  }
-
-  /**
-   * Write opposite, because Sass compiler of Liferay removes white space before first :not --> .theme_lbv:not...
-   */
-
-  .table--is-responsive > .table--is-breakable .table__row--type-header {
-    display: table-row;
-  }
-
-  .table--is-responsive {
-    width: 100%;
-    overflow-y: hidden;
-  }
+.blogentry__text {
+  line-height: 1.6;
 }

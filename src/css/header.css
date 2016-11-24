@@ -119,7 +119,7 @@ body.show-nav {
 
 @media (--biggerThanMobile) {
   .header__title {
-    font-size: 2rem;
+    font-size: 1.68rem;
   }
 }
 
@@ -218,8 +218,23 @@ a.navigation__link {
   font-weight: 300;
 }
 
+a.navigation__link--add-icon {
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+  background-position: left 0.97rem;
+  background-size: 1.65rem;
+}
+
 @media (--biggerThanMobile) {
   a.navigation__link {
     line-height: var(--heightHeader);
+  }
+
+  a.navigation__link--add-icon {
+    background-position: center 0.4rem;
+    background-size: 1.65rem;
+    padding: 0 1rem;
+    padding-top: 1.8rem;
+    line-height: calc(var(--heightHeader) - 1.8rem);
   }
 }

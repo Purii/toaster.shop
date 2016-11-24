@@ -1,4 +1,4 @@
-@custom-media --biggerThanMobile (min-width: 1040px);
+@custom-media --biggerThanMobile (min-width: 1100px);
 
 /** SingleColumn 18rem */
 @custom-media --biggerSingleColumn (min-width: 580px);

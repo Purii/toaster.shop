@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-    RewriteRule ^klassische-toaster/?$ classicToaster.html [NC,L]
+  RewriteRule ^klassische-toaster/?$ classicToaster.html [NC,L]
   RewriteRule ^klassische-toaster/zwei-schlitz-toaster/?$ twoSlotToaster.html [NC,L]
   RewriteRule ^klassische-toaster/vier-schlitz-toaster/?$ fourSlotToaster.html [NC,L]
 
@@ -10,6 +10,7 @@
   RewriteRule ^retro-toaster/?$ retroToaster.html [NC,L]
   RewriteRule ^sandwichtoaster/?$ sandwichToaster.html [NC,L]
 
+  RewriteRule ^rezeptideen/?$ rezeptideen.html [NC,L]
   RewriteRule ^impressum/?$ impressum.html [NC,L]
   RewriteRule ^datenschutz/?$ datenschutz.html [NC,L]
 

@@ -105,6 +105,10 @@
                   <strong>Favicon</strong><br/>
                   Toaster by anbileru adaleru from the Noun Project
                 </p>
+                <p class="section__text">
+                  <strong>Icon "Rezeptideen"</strong><br/>
+                  chef by IconfactoryTeam from the Noun Project
+                </p>
               </div>
             </div>
           </section>
@@ -120,7 +124,9 @@
         </div>
 
         <!-- FOOTER -->
-        @@include('./partials/gaanalytics.html')
+        @@if (env === 'production') {
+          @@include('./partials/gaanalytics.html')
+        }
         <!-- /FOOTER -->
 
         <!-- inject:js -->
