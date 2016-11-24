@@ -160,6 +160,22 @@ body.show-nav {
   transition: opacity 0.35s ease-out, transform 0.35s ease-out, -webkit-transform 0.35s ease-out;
 }
 
+.headernavigation__element:hover,
+.headernavigation__element:active,
+.headernavigation__element.selected {
+  background-color: #FFB300;
+}
+
+.headernavigation__element--color-highlight {
+  background-color: rgba(178, 41, 0, 0.8);
+}
+
+.headernavigation__element--color-highlight:hover,
+.headernavigation__element--color-highlight:active,
+.headernavigation__element--color-highlight.selected {
+  background-color: rgba(178, 41, 0, 1);
+}
+
 @media (--biggerThanMobile) {
   .headernavigation__element {
     opacity: 1;
@@ -195,12 +211,6 @@ body.show-nav {
 .show-nav .headernavigation__element {
   opacity: 1;
   transform: none;
-}
-
-.headernavigation__element:hover,
-.headernavigation__element:active,
-.headernavigation__element.selected {
-  background-color: #FFB300;
 }
 
 .header__title__link {
