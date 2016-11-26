@@ -246,6 +246,8 @@
 
 .productcard__imagecontainer {
   padding: 0 5rem 2rem;
+  max-height: 25%;
+  min-height: 25%;
 }
 
 .productcard__image {
