@@ -72,8 +72,8 @@ gulp.task('imgAmzn:production', () =>
   gulp.src(`${config.dirs.src}/img/amzn/*.{jpg,png}`)
   .pipe(parallel(
     plugins().imageResize({
-      width: 160,
-      height: 170,
+      width: 240,
+      height: 240,
       imageMagick: true,
     }),
     os.cpus().length
