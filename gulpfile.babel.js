@@ -271,4 +271,5 @@ gulp.task('watch', () => {
   gulp.watch(`${config.dirs.src}/**/*.css`, ['css:dev']);
   gulp.watch(`${config.dirs.src}/**/*.html`, ['html:dev']);
   gulp.watch(`${config.dirs.src}/**/*.js`, ['js:dev']);
+  gulp.watch(`${config.dirs.src}/**/*`, ['img:dev']);
 });
