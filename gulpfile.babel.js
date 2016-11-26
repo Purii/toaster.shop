@@ -1,4 +1,6 @@
 import gulp from 'gulp';
+import parallel from 'concurrent-transform';
+import os from 'os';
 import fs from 'fs';
 
 /**
@@ -56,7 +58,7 @@ gulp.task('copy:misc', () =>
 );
 
 gulp.task('img:dev', () =>
-  gulp.src(`${config.dirs.src}/img/*`)
+  gulp.src(`${config.dirs.src}/img/**/*`)
   .pipe(gulp.dest(`${config.dirs.build}/img`))
 );
 
@@ -64,6 +66,22 @@ gulp.task('img:production', () =>
   gulp.src(`${config.dirs.src}/img/*`)
   .pipe(plugins().imagemin())
   .pipe(gulp.dest(`${config.dirs.dist}/img`))
+);
+
+gulp.task('imgAmzn:production', () =>
+  gulp.src(`${config.dirs.src}/img/amzn/*.{jpg,png}`)
+  .pipe(parallel(
+    plugins().imageResize({
+      width: 160,
+      height: 170,
+      imageMagick: true,
+    }),
+    os.cpus().length
+  ))
+  .pipe(parallel(
+    plugins().imagemin()
+  ))
+  .pipe(gulp.dest(`${config.dirs.dist}/img/amzn`))
 );
 
 /**
@@ -217,6 +235,7 @@ gulp.task('build:development',
 gulp.task('build:production',
   [
     'img:production',
+    'imgAmzn:production',
     'html:production',
     'css:production',
     'js:production',
