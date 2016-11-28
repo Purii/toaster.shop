@@ -147,6 +147,7 @@ gulp.task('js:dev', () =>
 
 gulp.task('js:production', () =>
   gulp.src(`${config.dirs.src}/js/*.js`)
+    // Use Webpack to require modules and run babel
     .pipe(webpack({
       module: {
         loaders: [
