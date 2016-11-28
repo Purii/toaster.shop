@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rimraf dist build",
     "build": "npm run clean && cross-env NODE_ENV=production gulp",
-    "lint:eslint": "eslint .",
+    "lint:eslint": "eslint src/",
     "lint:stylelint": "stylelint src/css/*.css",
     "lint": "npm run lint:eslint",
     "start": "npm run clean && gulp && gulp watch",
