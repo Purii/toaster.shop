@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import parallel from 'concurrent-transform';
 import os from 'os';
 import fs from 'fs';
+import webpack from 'webpack-stream';
 
 /**
  * Load all gulp plugins automatically
@@ -146,9 +147,18 @@ gulp.task('js:dev', () =>
 
 gulp.task('js:production', () =>
   gulp.src(`${config.dirs.src}/js/*.js`)
-    .pipe(plugins().babel({
-      minified: true,
-      comments: false,
+    .pipe(webpack({
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            loader: 'babel',
+          },
+        ],
+      },
+      plugins: [
+        new webpack.webpack.optimize.UglifyJsPlugin({ minimize: true, sourceMap: false }),
+      ],
     }))
 
     // Write files

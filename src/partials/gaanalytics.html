@@ -2,12 +2,13 @@
   var gaProperty = 'UA-87676017-1';
   var gaDisabled = 'ga-disable-' + gaProperty;
 
-  if (document.cookie.indexOf(gaDisabled + '=true') > -1) {
+  /** Functions */
+  function handleGAOptOut() {
+    document.cookie = gaDisabled + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
     window[gaDisabled] = true;
   }
 
-  function gaOptOut() {
-    document.cookie = gaDisabled + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+  if (document.cookie.indexOf(gaDisabled + '=true') > -1) {
     window[gaDisabled] = true;
   }
 
@@ -18,5 +19,10 @@
 
   ga('create', gaProperty, 'auto');
   ga('set', 'anonymizeIp', true);
+
+  // Enable Plugins
+  ga('require', 'cleanUrlTracker');
+  ga('require', 'outboundLinkTracker');
+
   ga('send', 'pageview');
 </script>
