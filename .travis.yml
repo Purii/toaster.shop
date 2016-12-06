@@ -12,6 +12,7 @@ after_success:
 notifications:
  email:
     recipients:
-      - $NOTIFICATION_MAIL
+      #- $NOTIFICATION_MAIL
+       - assistant@toaster-online.de
     on_success: always # default: change
     on_failure: always # default: always
