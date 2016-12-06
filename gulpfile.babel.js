@@ -241,7 +241,7 @@ gulp.task('build:development',
     'html:dev',
     'css:dev',
     'js:dev',
-  ]
+  ],
 );
 gulp.task('build:production',
   [
@@ -252,7 +252,7 @@ gulp.task('build:production',
     'js:production',
     'copy',
     'critical',
-  ]
+  ],
 );
 
 if (env === 'production') {
