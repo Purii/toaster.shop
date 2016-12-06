@@ -2,13 +2,6 @@ language: node_js
 node_js:
  - "node"
 
-script:
- - npm test
- - npm run build
-
-after_success:
- - cd dist && find . -type f -exec curl -u $FTP_U:$FTP_P --ftp-create-dirs -T {} ftp://toaster-online.de/{} \;
-
 notifications:
  email:
     recipients:
@@ -16,3 +9,10 @@ notifications:
        - assistant@toaster-online.de
     on_success: always # default: change
     on_failure: always # default: always
+
+script:
+ - npm test
+ - npm run build
+
+after_success:
+ - cd dist && find . -type f -exec curl -u $FTP_U:$FTP_P --ftp-create-dirs -T {} ftp://toaster-online.de/{} \;
