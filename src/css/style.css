@@ -161,3 +161,15 @@ body {
   text-align: left;
   padding: 8px;
 }
+
+.link--style-footnote {
+  text-decoration: none;
+}
+
+.link__text {
+  text-decoration: underline;
+}
+
+.link__footnote {
+  text-decoration: none;
+}
