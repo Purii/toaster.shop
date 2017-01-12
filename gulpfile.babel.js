@@ -65,14 +65,6 @@ gulp.task('img:dev', () =>
 
 gulp.task('img:production', () =>
   gulp.src(`${config.dirs.src}/img/*`)
-    .pipe(parallel(
-      plugins().imageResize({
-        width: 1000,
-        height: 667,
-        imageMagick: true,
-      }),
-      os.cpus().length
-  ))
   .pipe(plugins().imagemin())
   .pipe(gulp.dest(`${config.dirs.dist}/img`))
 );
